@@ -3,7 +3,18 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo Cesar F Entered the pre_build phase...
       - pip install -r requirements.txt
+  build:
+    commands:
+      - echo Cesar F Entered the build phase...
+      - echo Cesar F Build started on `date`
+    finally:
+      - echo This always runs even if the install command fails
+  post_build:
+    commands:
+      - echo Cesar F Entered the post_build phase...
+      - echo Cesar F Build completed on `date`
 artifacts:
   files:
     - '**/*'
